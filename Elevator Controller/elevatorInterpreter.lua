@@ -1,34 +1,25 @@
-local argument1 = arg[1]
+---@diagnostic disable: undefined-global
 
---Checks if something is actually a number (yippe)
-local function checknumber(num)
-    if type(num) == "number" then
-    	return true
-    else
-    	return false
+rednet.open("top")
+while (true) do
+
+    local senderId, message, protocol = rednet.receive()
+    if message == "ElevationSection1" then
+        redstone.setOutput("right", true)
+        sleep(1)
+        redstone.setOutput("right", false)
+    elseif message == "ElevationSection2" then
+        redstone.setOutput("back", true)
+        sleep(1)
+        redstone.setOutput("back", false)
+    elseif message == "ElevationSection3" then
+        redstone.setOutput("left", true)
+        sleep(1)
+        redstone.setOutput("left", false)
+    elseif message == "ElevationSection4" then
+        redstone.setOutput("front", true)
+        sleep(1)
+        redstone.setOutput("front", false)
     end
-end
 
-local function interpret(floor)
-    print(floor)
-end
-
-local function help()
-    print("Usage:")
-    print("null")
-end
-
-if arg[1] == nil then
-    print("Use \"elevatorInterpreter help\" for usage")
-elseif arg[1] == "help" then
-    help()
-elseif arg[1] == "call" or arg[1] == "send" then
-    local number = tonumber(argument1)
-    if checknumber(number) == true then
-        interpret(number)
-    else
-        help()
-    end
-elseif arg[1] == "toggle" then
-    print("toggle elevator")
 end

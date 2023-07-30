@@ -16,12 +16,16 @@ end
 local function interpret(floor)
     if floor/4 <= 1 then
         rednet.broadcast("ElevationSection1")
+        rednet.close("back")
     elseif floor/4 <= 2 then
         rednet.broadcast("ElevationSection2")
+        rednet.close("back")
     elseif floor/4 <= 3 then
         rednet.broadcast("ElevationSection3")
+        rednet.close("back")
     elseif floor/4 <= 4 then
         rednet.broadcast("ElevationSection4")
+        rednet.close("back")
     else
         print("Invalid Floor")
     end
