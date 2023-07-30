@@ -37,7 +37,7 @@ local function help()
 end
 
 if arg[1] == nil then
-    print("Use \"elevatorInterpreter help\" for usage")
+    print("Use \"elevator help\" for usage")
 elseif arg[1] == "help" then
     help()
 elseif arg[1] == "call" or arg[1] == "send" then
