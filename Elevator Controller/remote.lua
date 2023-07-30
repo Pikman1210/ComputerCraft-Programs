@@ -33,7 +33,8 @@ end
 
 local function help()
     print("Usage:")
-    print("null")
+    print("elevator call (floor #)")
+    print("elevator send (floor #)")
 end
 
 if arg[1] == nil then
@@ -49,4 +50,6 @@ elseif arg[1] == "call" or arg[1] == "send" then
     end
 elseif arg[1] == "toggle" then
     print("toggle elevator")
+else
+    help()
 end
