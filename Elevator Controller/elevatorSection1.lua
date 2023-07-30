@@ -1,11 +1,9 @@
 ---@diagnostic disable: undefined-global
 
 rednet.open("bottom")
-print("krill urself")
 
 while (true) do
     local senderId, message, protocol = rednet.receive()
-    print("beans")
     if message == "Elevator1" then
         print("ig")
         redstone.setOutput("right", true)
