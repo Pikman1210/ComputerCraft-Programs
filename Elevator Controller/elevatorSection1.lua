@@ -1,25 +1,27 @@
 ---@diagnostic disable: undefined-global
 
-rednet.open("top")
-while (true) do
+rednet.open("bottom")
+print("krill urself")
 
+while (true) do
     local senderId, message, protocol = rednet.receive()
-    if message == "Elevator1" or message == "Elevator2" or message == "Elevator3" or message == "Elevator4" then
+    print("beans")
+    if message == "Elevator1" then
+        print("ig")
         redstone.setOutput("right", true)
         sleep(1)
         redstone.setOutput("right", false)
-    elseif message == "ElevationSection2" then
+    elseif message == "Elevator2" then
         redstone.setOutput("back", true)
         sleep(1)
         redstone.setOutput("back", false)
-    elseif message == "ElevationSection3" then
-        redstone.setOutput("left", true)
-        sleep(1)
-        redstone.setOutput("left", false)
-    elseif message == "ElevationSection4" then
+    elseif message == "Elevator3" then
         redstone.setOutput("front", true)
         sleep(1)
         redstone.setOutput("front", false)
+    elseif message == "Elevator4" then
+        redstone.setOutput("top", true)
+        sleep(1)
+        redstone.setOutput("top", false)
     end
-
 end

@@ -14,20 +14,60 @@ local function checknumber(num)
 end
 
 local function interpret(floor)
-    if floor/4 <= 1 then
-        rednet.broadcast("ElevationSection1")
+    if floor == 1 then
+        rednet.broadcast("Elevator1")
         rednet.close("back")
-    elseif floor/4 <= 2 then
-        rednet.broadcast("ElevationSection2")
+    elseif floor == 2 then
+        rednet.broadcast("Elevator2")
         rednet.close("back")
-    elseif floor/4 <= 3 then
-        rednet.broadcast("ElevationSection3")
+    elseif floor == 3 then
+        rednet.broadcast("Elevator3")
         rednet.close("back")
-    elseif floor/4 <= 4 then
-        rednet.broadcast("ElevationSection4")
+    elseif floor == 4 then
+        rednet.broadcast("Elevator4")
+        rednet.close("back")
+    elseif floor == 5 then
+        rednet.broadcast("Elevator5")
+        rednet.close("back")
+    elseif floor == 6 then
+        rednet.broadcast("Elevator6")
+        rednet.close("back")
+    elseif floor == 7 then
+        rednet.broadcast("Elevator7")
+        rednet.close("back")
+    elseif floor == 8 then
+        rednet.broadcast("Elevator8")
+        rednet.close("back")
+    elseif floor == 9 then
+        rednet.broadcast("Elevator9")
+        rednet.close("back")
+    elseif floor == 10 then
+        rednet.broadcast("Elevator10")
+        rednet.close("back")
+    elseif floor == 11 then
+        rednet.broadcast("Elevator11")
+        rednet.close("back")
+    elseif floor == 12 then
+        rednet.broadcast("Elevator12")
+        rednet.close("back")
+    elseif floor == 13 then
+        rednet.broadcast("Elevator13")
+        rednet.close("back")
+    elseif floor == 14 then
+        rednet.broadcast("Elevator14")
+        rednet.close("back")
+    elseif floor == 15 then
+        rednet.broadcast("Elevator15")
+        rednet.close("back")
+    elseif floor == 16 then
+        rednet.broadcast("Elevator16")
         rednet.close("back")
     else
         print("Invalid Floor")
+    end
+
+    if floor < 17 then
+        print("Going to ", floor)
     end
 end
 
