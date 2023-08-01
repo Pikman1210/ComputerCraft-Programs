@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-global, undefined-field
 --local floor
-local loadingDelay = "20"
-local unloadingDelay = "15"
+local loadingDelay = 20
+local unloadingDelay = 15
 
 local ground = "top"
 local function gotoSurface()
