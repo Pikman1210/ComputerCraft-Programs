@@ -1,11 +1,14 @@
 ---@diagnostic disable: undefined-global, undefined-field
 --local floor
+local loadingDelay = "20"
+local unloadingDelay = "15"
+
 local ground = "top"
 local function gotoSurface()
     redstone.setOutput(ground, true)
     os.sleep(1)
     redstone.setOutput(ground, false)
-    os.sleep(15)
+    os.sleep(unloadingDelay)
 end
 
 local processing = "right"
@@ -13,7 +16,7 @@ local function gotoProcessing()
     redstone.setOutput(processing, true)
     os.sleep(1)
     redstone.setOutput(processing, false)
-    os.sleep(20)
+    os.sleep(loadingDelay)
 end
 
 local iron = "back"
@@ -21,7 +24,7 @@ local function gotoIron()
     redstone.setOutput(iron, true)
     os.sleep(1)
     redstone.setOutput(iron, false)
-    os.sleep(15)
+    os.sleep(loadingDelay)
 end
 
 local gold = "left"
@@ -29,7 +32,7 @@ local function gotoGold()
     redstone.setOutput(gold, true)
     os.sleep(1)
     redstone.setOutput(gold, false)
-    os.sleep(15)
+    os.sleep(loadingDelay)
 end
 
 local copper = "bottom"
@@ -37,7 +40,7 @@ local function gotoCopper()
     redstone.setOutput(copper, true)
     os.sleep(1)
     redstone.setOutput(copper, false)
-    os.sleep(15)
+    os.sleep(loadingDelay)
 end
 
 local zinc = "front"
@@ -45,7 +48,7 @@ local function gotoZinc()
     redstone.setOutput(zinc, true)
     os.sleep(1)
     redstone.setOutput(zinc, false)
-    os.sleep(15)
+    os.sleep(loadingDelay20)
 end
 
 print("Starting at ground (G)")
@@ -55,7 +58,11 @@ gotoProcessing()
 while (true) do
     print("Going to iron")
     gotoIron()
-    print("Dumping items")
+    print("Dumping iron")
+    gotoProcessing()
+    print("Going to gold")
+    gotoGold()
+    print("Dumping gold")
     gotoProcessing()
     print("All transports complete, collecting items")
     gotoProcessing()
