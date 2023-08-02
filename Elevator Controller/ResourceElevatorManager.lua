@@ -48,7 +48,7 @@ local function gotoZinc()
     redstone.setOutput(zinc, true)
     os.sleep(1)
     redstone.setOutput(zinc, false)
-    os.sleep(loadingDelay20)
+    os.sleep(loadingDelay)
 end
 
 print("Starting at ground (G)")
